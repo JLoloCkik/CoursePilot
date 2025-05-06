@@ -4,14 +4,7 @@ import os
 import sqlite3
 from courses import Course
 
-# Database file path
-DB_PATH = os.path.join(
-    os.path.dirname(__file__),
-    "..",
-    "data",
-    "courses.db"
-)
-# Ensure data folder exists
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "courses.db")
 os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
 
 def init_db():
