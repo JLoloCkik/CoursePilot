@@ -8,11 +8,11 @@ CoursePilot is a personalized AI learning management system that helps with week
 - **Weekly Learning Management**: Set weekly study time (e.g., 10 hours); automatic daily breakdown; display "Daily Goal"; and dynamic replanning if a day is missed.
 - **Progress Tracking**: Manual progress updates; Udemy scraping to automatically read percentage completion from course links; and calculate estimated hours from progress percentage.
 - **Roadmap Dashboard**: Visual progress bars for courses; color-coded by status; and overall "AI Mastery" roadmap progress.
-- **GUI**: Web app using Streamlit or Flask; main views: course list, weekly plan, roadmap, and daily goal.
+- **GUI**: PySide6 ; main views: course list, weekly plan, roadmap, and daily goal.
 - **Extra Features**: Daily learning logging; Pomodoro timer; visualizations (e.g., learning graphs); note-taking per course; and roadmap export (PDF/CSV).
 
 ## Technology Stack
-- **Languages and Frameworks**: Python, Streamlit or Flask.
+- **Languages and Frameworks**: Python, PySide6.
 - **Data Storage**: JSON or SQLite.
 - **Other Tools**: Selenium/Playwright for scraping; Plotly/Matplotlib for visualizations.
 - **Version Control**: Git + GitHub.
