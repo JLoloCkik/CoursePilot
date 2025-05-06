@@ -24,7 +24,6 @@ QPushButton {{
     background-color: {THEME_BUTTON_NORMAL};
     color: {THEME_BUTTON_TEXT};
     font: {TAB_FONT_SIZE} {FONT_FAMILY};
-    border: 0.5px solid black;
     border-radius: 4px;
     padding: 8px;
 }}
@@ -39,4 +38,25 @@ QLabel {{
     color: {THEME_TEXT};
     font: {TAB_FONT_SIZE} {FONT_FAMILY};
 }}
+"""
+
+# Label style for field names
+FIELD_LABEL_QSS = """
+QLabel {
+    color: #ffffff;
+    font: 14pt Arial;
+    margin: 4px 0px;
+}
+"""
+
+# Text box (QLineEdit) style
+FIELD_EDIT_QSS = """
+QLineEdit {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #777777;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 2px 0px;
+}
 """
