@@ -3,3 +3,4 @@ selenium
 plotly
 PySide2
 numpy
+sqlite3

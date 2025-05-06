@@ -1,3 +1,5 @@
+# config.py
+
 # Theme colors and fonts
 THEME_BACKGROUND    = "#2c2c2c"
 THEME_TEXT          = "#ffffff"
@@ -10,53 +12,53 @@ FONT_SIZE     = "14pt"
 TAB_FONT_SIZE = "16pt"
 
 # Main window style
-APP_STYLE = f"""
-QMainWindow {{
-    background-color: {THEME_BACKGROUND};
-    color: {THEME_TEXT};
-    font: {FONT_SIZE} {FONT_FAMILY};
-}}
-"""
+APP_STYLE = (
+    "QMainWindow {"
+    f" background-color: {THEME_BACKGROUND};"
+    f" color: {THEME_TEXT};"
+    f" font: {FONT_SIZE} {FONT_FAMILY};"
+    "}"
+)
 
-# Tab-button style with border, margin & padding
-TAB_BUTTON_QSS = f"""
-QPushButton {{
-    background-color: {THEME_BUTTON_NORMAL};
-    color: {THEME_BUTTON_TEXT};
-    font: {TAB_FONT_SIZE} {FONT_FAMILY};
-    border-radius: 4px;
-    padding: 8px;
-}}
-QPushButton:checked {{
-    background-color: {THEME_BUTTON_PRESSED};
-}}
-"""
+# Tab-button style (normal + checked)
+TAB_BUTTON_QSS = (
+    "QPushButton {"
+    f" background-color: {THEME_BUTTON_NORMAL};"
+    f" color: {THEME_BUTTON_TEXT};"
+    f" font: {TAB_FONT_SIZE} {FONT_FAMILY};"
+    " padding:8px;"
+    " border-radius:4px;"
+    "}"
+    "QPushButton:checked {"
+    f" background-color: {THEME_BUTTON_PRESSED};"
+    "}"
+)
 
-# Label style for page content
-PAGE_LABEL_QSS = f"""
-QLabel {{
-    color: {THEME_TEXT};
-    font: {TAB_FONT_SIZE} {FONT_FAMILY};
-}}
-"""
+# Form field label style
+FIELD_LABEL_QSS = (
+    "QLabel {"
+    f" color: {THEME_TEXT};"
+    f" font: {FONT_SIZE} {FONT_FAMILY};"
+    " margin:4px 0;"
+    "}"
+)
 
-# Label style for field names
-FIELD_LABEL_QSS = """
-QLabel {
-    color: #ffffff;
-    font: 14pt Arial;
-    margin: 4px 0px;
-}
-"""
+# Text box and combo box style
+FIELD_EDIT_QSS = (
+    "QLineEdit, QComboBox {"
+    " background-color: #ffffff;"
+    " color: #000000;"
+    " border:1px solid #777777;"
+    " border-radius:4px;"
+    " padding:4px;"
+    " margin:2px 0;"
+    "}"
+)
 
-# Text box (QLineEdit) style
-FIELD_EDIT_QSS = """
-QLineEdit {
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #777777;
-    border-radius: 4px;
-    padding: 4px;
-    margin: 2px 0px;
-}
-"""
+# Page label style
+PAGE_LABEL_QSS = (
+    "QLabel {"
+    f" color: {THEME_TEXT};"
+    f" font: {TAB_FONT_SIZE} {FONT_FAMILY};"
+    "}"
+)
