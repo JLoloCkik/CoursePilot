@@ -39,4 +39,4 @@ Design phase: Currently working on specifications and architecture.
 ## License
 MIT License (or choose one).
 
-Made with ❤️ by [JLolo].
+Made with by JLolo.
