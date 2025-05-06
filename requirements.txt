@@ -1,0 +1,5 @@
+streamlit
+selenium
+plotly
+PySide2
+numpy
