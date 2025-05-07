@@ -1,83 +1,193 @@
-# config.py
+# --- Dark Theme Colors ---
+THEME_BACKGROUND_DARK = "#1e1e1e"
+THEME_BACKGROUND_LIGHTER = "#2c2c2c"
+THEME_SURFACE = "#3c3c3c"
+THEME_SURFACE_HOVER = "#4a4a4a"
+THEME_SURFACE_PRESSED = "#5c5c5c"
 
-THEME_BACKGROUND = "#2c2c2c"
-THEME_TEXT = "#ffffff"
-THEME_BUTTON_NORMAL = "#3c3c3c"
-THEME_BUTTON_PRESSED = "#5c5c5c"
-THEME_BUTTON_TEXT = "#ffffff"
+THEME_TEXT_PRIMARY = "#e0e0e0"
+THEME_TEXT_SECONDARY = "#b0b0b0"
+THEME_ACCENT = "#007bff"
+THEME_ACCENT_HOVER = "#0056b3"
+THEME_BORDER = "#555555"
+THEME_BORDER_LIGHT = "#777777"
 
-FONT_FAMILY = "Arial"
-FONT_SIZE = "14pt"
-TAB_FONT_SIZE = "16pt"
+# --- Fonts ---
+FONT_FAMILY = "Segoe UI"
+FONT_SIZE = "12pt"
+TAB_FONT_SIZE = "14pt"
+CARD_TITLE_FONT_SIZE = "15pt"
+CARD_INFO_FONT_SIZE = "9pt"
+CARD_STATUS_FONT_SIZE = "11pt"
+PLANNER_DAY_FONT_SIZE = "10pt"
 
-# Main window style
-APP_STYLE = (
-    "QMainWindow {"
-    f" background-color: {THEME_BACKGROUND};"
-    f" color: {THEME_TEXT};"
-    f" font: {FONT_SIZE} {FONT_FAMILY};"
-    "}"
-)
+# --- Main Window Style ---
+APP_STYLE = ("QMainWindow {"
+             f" background-color: {THEME_BACKGROUND_DARK};"
+             f" color: {THEME_TEXT_PRIMARY};"
+             f" font: {FONT_SIZE} {FONT_FAMILY};"
+             "}"
 
-# Tab-button style (normal + checked)
-TAB_BUTTON_QSS = (
-    "QPushButton {"
-    f" background-color: {THEME_BUTTON_NORMAL};"
-    f" color: {THEME_BUTTON_TEXT};"
-    f" font: {TAB_FONT_SIZE} {FONT_FAMILY};"
-    " margin:4px;"
-    " padding:8px;"
-    " border-radius:4px;"
-    "}"
-    "QPushButton:checked {"
-    f" background-color: {THEME_BUTTON_PRESSED};"
-    "}"
-)
+             "QScrollBar:vertical {"
+             f" border: 1px solid {THEME_BORDER};"
+             f" background: {THEME_SURFACE};"
+             " width: 12px;"
+             " margin: 12px 0 12px 0;"
+             " border-radius: 0px;"
+             "}"
+             "QScrollBar::handle:vertical {"
+             f" background-color: {THEME_ACCENT};"
+             " min-height: 25px;"
+             " border-radius: 4px;"
+             "}"
+             "QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {"
+             " border: none; background: none;"
+             "}"
+             "QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {"
+             " background: none;"
+             "}"
+             "QScrollArea {"
+             f" background-color: {THEME_BACKGROUND_DARK};"
+             " border: none;"
+             "}")
 
-# Form field label style
-FIELD_LABEL_QSS = (
-    "QLabel {"
-    f" color: {THEME_TEXT};"
-    f" font: {FONT_SIZE} {FONT_FAMILY};"
-    " margin:4px 0;"
-    "}"
-)
+# --- Tab Button Style ---
+TAB_BUTTON_QSS = ("QPushButton {"
+                  f" background-color: {THEME_SURFACE};"
+                  f" color: {THEME_TEXT_PRIMARY};"
+                  f" font: bold {TAB_FONT_SIZE} {FONT_FAMILY};"
+                  f" border: 1px solid {THEME_BORDER};"
+                  " margin: 2px;"
+                  " padding: 10px;"
+                  " border-radius: 5px;"
+                  "}"
+                  "QPushButton:hover {"
+                  f" background-color: {THEME_SURFACE_HOVER};"
+                  "}"
+                  "QPushButton:checked {"
+                  f" background-color: {THEME_ACCENT};"
+                  f" color: {THEME_BACKGROUND_DARK};"
+                  f" border: 1px solid {THEME_ACCENT_HOVER};"
+                  "}")
 
-# Text box and combo box style
-FIELD_EDIT_QSS = (
-    "QLineEdit, QComboBox {"
-    f"background-color: white;"
-    " color: #000000;"
-    " border-radius:4px;"
-    " padding:4px;"
-    " margin:2px 0;"
-    "}"
-)
+# --- Form Field Label Style ---
+FIELD_LABEL_QSS = ("QLabel {"
+                   f" color: {THEME_TEXT_SECONDARY};"
+                   f" font: {FONT_SIZE} {FONT_FAMILY};"
+                   " margin: 5px 0px 2px 0px;"
+                   " padding-right: 5px;"
+                   "}")
 
-# Card frame style
-CARD_STYLE = (
-    "QFrame {"
-    f"background-color: {THEME_BACKGROUND};"
-    " border-radius:8px;"
-    " margin:4px;"
-    " padding:8px;"
-    "}"
-)
+# --- Input Fields (QLineEdit, QComboBox, QDateEdit, QSpinBox) Style ---
+FIELD_EDIT_QSS = ("QLineEdit, QComboBox, QDateEdit, QSpinBox {"
+                  f" background-color: {THEME_BACKGROUND_LIGHTER};"
+                  f" color: {THEME_TEXT_PRIMARY};"
+                  f" border: 1px solid {THEME_BORDER_LIGHT};"
+                  " border-radius: 4px;"
+                  " padding: 6px;"
+                  " margin: 2px 0px 5px 0px;"
+                  f" font: {FONT_SIZE} {FONT_FAMILY};"
+                  "}"
+                  "QLineEdit:focus, QComboBox:focus, QDateEdit:focus, QSpinBox:focus {"
+                  f" border: 1px solid {THEME_ACCENT};"
+                  "}"
+                  "QComboBox::drop-down, QDateEdit::drop-down {"
+                  " subcontrol-origin: padding;"
+                  " subcontrol-position: top right;"
+                  " width: 22px;"
+                  f" border: 1px solid {THEME_BORDER_LIGHT};"
+                  " border-top-right-radius: 3px;"
+                  " border-bottom-right-radius: 3px;"
+                  "}"
+                  "QComboBox::down-arrow, QDateEdit::down-arrow {"
 
-# Scroll area style
-SCROLL_AREA_STYLE = (
-    "QDialog { background-color: white; }" 
-    "QLabel { color: black; font: 12pt Arial; background-color: white;}"  
-    "QComboBox { background-color: white; color: black; border: 1px solid #cccccc; font: 12pt Arial; padding: 3px; }"  
-    "QComboBox QAbstractItemView { background-color: white; color: black; selection-background-color: #e0e0e0; }"  
-    "QPushButton { background-color: #f0f0f0; color: black; border: 1px solid #cccccc; padding: 5px; font: 12pt Arial; }"  
-    "QPushButton:hover { background-color: #e0e0e0; }"
-)
+                  "}"
+                  "QSpinBox::up-button, QSpinBox::down-button {"
+                  " width: 18px;"
+                  f" background-color: {THEME_SURFACE};"
+                  f" border: 1px solid {THEME_BORDER_LIGHT};"
+                  "}"
+                  "QSpinBox::up-arrow, QSpinBox::down-arrow { color: white; }")
 
-# Page label style
-PAGE_LABEL_QSS = (
-    "QLabel {"
-    f" color: {THEME_TEXT};"
-    f" font: {TAB_FONT_SIZE} {FONT_FAMILY};"
-    "}"
-)
+# --- Course Card Style ---
+CARD_STYLE = ("QFrame {"
+              f" background-color: {THEME_BACKGROUND_LIGHTER};"
+              f" border: 1px solid {THEME_BORDER};"
+              " border-radius: 6px;"
+              " margin: 5px;"
+              " padding: 10px;"
+              "}")
+CARD_TITLE_QSS = f"font: bold {CARD_TITLE_FONT_SIZE} {FONT_FAMILY}; color: {THEME_TEXT_PRIMARY}; margin-bottom: 5px;"
+CARD_TIME_QSS = f"font: {CARD_INFO_FONT_SIZE} {FONT_FAMILY}; color: {THEME_TEXT_SECONDARY};"
+CARD_STATUS_QSS = f"font: {CARD_STATUS_FONT_SIZE} {FONT_FAMILY}; color: {THEME_ACCENT}; margin-top: 5px;"
+CARD_DUE_QSS = f"font: italic {CARD_INFO_FONT_SIZE} {FONT_FAMILY}; color: #e57373;"
+CARD_PRIO_QSS = f"font: {CARD_INFO_FONT_SIZE} {FONT_FAMILY}; color: #81c784;"
+
+# --- Progress Bar Style ---
+PROGRESS_BAR_QSS = ("QProgressBar {"
+                    f" border: 1px solid {THEME_BORDER};"
+                    " border-radius: 5px;"
+                    " text-align: center;"
+                    f" color: {THEME_TEXT_PRIMARY};"
+                    f" background-color: {THEME_SURFACE};"
+                    "}"
+                    "QProgressBar::chunk {"
+                    f" background-color: {THEME_ACCENT};"
+                    " border-radius: 4px;"
+
+                    "}")
+
+# --- Page Label Style (e.g., tab titles, statistics headers) ---
+STAT_LABEL_QSS = ("QLabel {"
+                  f" color: {THEME_TEXT_SECONDARY};"  #
+                  f" font: {FONT_SIZE} {FONT_FAMILY};"
+                  "}")
+
+STAT_VALUE_QSS = ("QLabel {"
+                  f" color: {THEME_TEXT_PRIMARY};"
+                  f" font: bold {FONT_SIZE} {FONT_FAMILY};"
+                  "}")
+PAGE_LABEL_QSS = ("QLabel {"
+                  f" color: {THEME_TEXT_PRIMARY};"
+                  f" font: bold {TAB_FONT_SIZE} {FONT_FAMILY};"
+                  " margin-bottom: 10px;"
+                  "}")
+# --- List Widget Style (e.g., expenses list) ---
+LIST_WIDGET_QSS = ("QListWidget {"
+                   f" background-color: {THEME_BACKGROUND_LIGHTER};"
+                   f" color: {THEME_TEXT_PRIMARY};"
+                   f" border: 1px solid {THEME_BORDER};"
+                   f" font: {FONT_SIZE} {FONT_FAMILY};"
+                   " border-radius: 4px;"
+                   "}"
+                   "QListWidget::item {"
+                   " padding: 8px;"
+                   f" border-bottom: 1px solid {THEME_BORDER};"
+                   "}"
+                   "QListWidget::item:selected {"
+                   f" background-color: {THEME_ACCENT};"
+                   f" color: {THEME_BACKGROUND_DARK};"
+                   "}")
+
+# --- CheckBox Style ---
+CHECKBOX_QSS = ("QCheckBox {"
+                f" color: {THEME_TEXT_PRIMARY};"
+                f" font: {FONT_SIZE} {FONT_FAMILY};"
+                " spacing: 5px;"
+                "}"
+                "QCheckBox::indicator {"
+                " width: 16px;"
+                " height: 16px;"
+                f" border: 1px solid {THEME_BORDER_LIGHT};"
+                " border-radius: 3px;"
+                f" background-color: {THEME_BACKGROUND_LIGHTER};"
+                "}"
+                "QCheckBox::indicator:checked {"
+                f" background-color: {THEME_ACCENT};"
+                "}"
+                "QCheckBox::indicator:unchecked:hover {"
+                f" border: 1px solid {THEME_ACCENT};"
+                "}"
+                "QCheckBox::indicator:checked:hover {"
+                f" background-color: {THEME_ACCENT_HOVER};"
+                "}")
